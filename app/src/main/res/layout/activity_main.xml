@@ -16,39 +16,109 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:gravity="center_horizontal"
     android:orientation="vertical">
     
     <!-- Widget #1 TextView -->
     <!-- default - 12sp (increase by even) -->
-    <!-- sp means Scaled Pixels -->
+    <!-- sp means Scaled Pixels (Text/Font Size) -->
+    <!-- dp means Density Independent Pixels (Dimens) -->
+    
+    <!-- To use ellipsize=marquee you have to set maxLines=1 -->
+    
+    <!-- rrggbb (6) -->
+    <!-- aarrggbb (8) means alpha aka transparency aka opacity -->
+    <!-- Hex in Percent: https://stackoverflow.com/a/25170174/3844956 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="India vs Bangladesh #CWC2019"
-        android:textColor="#FFFFFF"
-        android:background="#673AB7"
-        android:textSize="26sp"
-        android:textAlignment="center"
-        android:maxLines="1"
-        android:textStyle="bold|normal"
-        android:textIsSelectable="true"/>
+        android:padding="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textSize="16sp"
+        android:fontFamily="@font/barriecito_regular"
+        android:textIsSelectable="true"
+        android:textColor="#DE000000"
+        android:text="Text to Display. This can be a very long text with many words India is my country. All Indians are my brothers and sisters except one."/>
     
-    <ImageView
-        android:layout_width="wrap_content"
+    <!-- layout_width of EditText should never be wrap_content -->
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:src="@drawable/match"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:maxLines="1"
+        android:maxLength="25"
+        android:inputType="textPassword"
+        android:hint="Enter your Full Name"/>
     
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="500 Laav"
-        android:backgroundTint="#FF0000"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="8dp"
+        android:text="Save My Details"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colorPrimary"/>
+    
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layoutDirection="ltr"
+        android:checked="true"
+        android:text="I agree to Terms &amp; Conditions "/>
+    
+    <Switch
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layoutDirection="ltr"
+        android:checked="true"
+        android:text="Turn ON WiFi"/>
+    
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Audience Poll"/>
+    
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="50-50"/>
+        
+    </RadioGroup>
+    
+    <ProgressBar
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="center_horizontal"/>
+    
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:rating="3.5"
+        android:numStars="5"/>
     
     <SeekBar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:progress="50"/>
+        android:layout_margin="16dp"
+        android:progress="20"
+        android:max="100"/>
     
 </LinearLayout>
